@@ -1,0 +1,396 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght=0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: #D3D3D3;
+    color: #171427;
+    padding-top: 100px; /* Jarak aman agar konten produk tidak tertutup oleh header fixed */
+}
+
+/* Container Wrapper Utama */
+.container {
+    max-width: 1068px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* ==================== HEADER & NAV NAVIGATION ==================== */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(211, 211, 211, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.logo {
+    font-size: 2rem;
+    color: #000000;
+    text-decoration: none;
+    font-weight: 700;
+    user-select: none;
+}
+
+/* Container untuk Link Menu Utama */
+.icons-container {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.navigation {
+    position: relative;
+    font-size: 1.1rem;
+    color: #000000;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navigation:hover {
+    color: #fd4646;
+}
+
+/* Efek Animasi Garis Bawah Navigasi */
+.navigation::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: #000000;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+}
+
+.navigation:hover::after {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+/* Ikon Fungsional (User Profile & Keranjang) */
+#profile-user, #cart-icon {
+    font-size: 1.6rem;
+    color: #000000;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+#profile-user:hover, #cart-icon:hover {
+    color: #fd4646;
+}
+
+/* Memastikan susunan navigasi kanan berbaris menyamping rapi */
+.nav > a, .nav > i {
+    display: flex;
+    align-items: center;
+}
+
+/* ==================== SIDEBAR KERANJANG (CART) ==================== */
+/* ==================== SIDEBAR KERANJANG (CART) ==================== */
+.cart {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Sembunyi secara default */
+    width: 360px;
+    height: 100vh;
+    padding: 30px 20px;
+    background: #ffffff;
+    box-shadow: -2px 0 15px rgba(0, 0, 0, 0.15);
+    transition: 0.4s ease;
+    z-index: 105;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Memicu munculnya cart */
+.cart.active {
+    right: 0;
+}
+
+.cart-title {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #162938;
+}
+
+/* Pembungkus semua item di dalam keranjang */
+.cart-content {
+    flex-grow: 1;
+    overflow-y: auto; /* Bisa di-scroll jika item banyak */
+    margin-bottom: 15px;
+}
+
+/* ==================== FIX TAMPILAN ITEM DI DALAM KERANJANG ==================== */
+/* Mengatur baris item agar gambar, teks, dan tombol hapus sejajar menyamping */
+.cart-box {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* SOLUSI UTAMA: Mengunci ukuran gambar di dalam keranjang agar tidak melar besar */
+.cart-box .product-img, 
+.cart-box img {
+    width: 80px !important;       /* Memaksa ukuran lebar menjadi kecil */
+    height: 80px !important;      /* Memaksa ukuran tinggi menjadi kecil */
+    object-fit: contain !important; /* Memastikan gambar tidak gepeng/terpotong */
+    border-radius: 8px;
+    background: #f9f9f9;
+}
+
+/* Kotak teks informasi produk */
+.detail-box {
+    display: grid;
+    row-gap: 4px;
+}
+
+.cart-product-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #171427;
+}
+
+.cart-price {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #fd4646;
+}
+
+.cart-quantity {
+    border: 1px solid #162938;
+    outline: none;
+    width: 45px;
+    text-align: center;
+    font-size: 0.85rem;
+    border-radius: 4px;
+    padding: 2px;
+}
+
+/* Tombol hapus item keranjang */
+.cart-remove {
+    font-size: 1.3rem;
+    color: #fd4646;
+    cursor: pointer;
+    margin-left: auto; /* Memaksa tombol hapus berada di ujung kanan */
+}
+
+.total {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+    border-top: 1px solid #171427;
+    padding-top: 15px;
+}
+
+.total-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.total-price {
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.btn-buy {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    background: #162938;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background 0.3s ease;
+}
+
+.btn-buy:hover {
+    background: #fd4646;
+}
+
+#close-cart {
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    font-size: 2rem;
+    color: #171427;
+    cursor: pointer;
+}
+
+/* ==================== DISPLAY KATALOG PRODUK ==================== */
+.shop {
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #162938;
+}
+
+/* Sistem Grid Otomatis Multikolom Fleksibel */
+.shop-contain {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.product-box {
+    position: relative;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.product-img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    background-color: #f9f9f9;
+}
+
+.product-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    color: #171427;
+}
+
+.price {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #162938;
+}
+
+/* Tombol add to cart di dalam kotak kartu produk */
+.add-cart {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background: #162938;
+    color: #ffffff;
+    padding: 10px;
+    font-size: 1.2rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.add-cart:hover {
+    background: #fd4646;
+}
+
+/* ==================== BREAKPOINTS RESPONSIVE LAYAR ==================== */
+@media (max-width: 768px) {
+    .nav {
+        padding: 15px 0;
+    }
+
+    .logo {
+        font-size: 1.6rem;
+    }
+
+    .shop-contain {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 15px;
+    }
+}
+
+/* Perbaikan untuk interface ukuran tampilan HP pintar */
+@media (max-width: 650px) {
+    body {
+        padding-top: 150px; /* Memberi kompensasi ruang karena tinggi navbar membesar */
+    }
+
+    .nav {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .icons-container {
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .navigation {
+        font-size: 1rem;
+    }
+
+    /* Merapikan letak ikon pelengkap agar sebaris di bagian bawah menu mobile */
+    .nav > a, #cart-icon {
+        display: inline-flex;
+        margin: 5px 10px 0;
+    }
+    
+    .cart {
+        width: 100%; /* Cart memenuhi layar penuh saat dibuka di smartphone */
+    }
+}
+
+@media (max-width: 400px) {
+    .shop-contain {
+        grid-template-columns: repeat(2, 1fr); /* Tetap mempertahankan 2 kolom simetris pada layar sangat kecil */
+        gap: 10px;
+    }
+    
+    .product-box {
+        padding: 10px;
+    }
+    
+    .add-cart {
+        bottom: 10px;
+        right: 10px;
+        padding: 8px;
+        font-size: 1rem;
+    }
+}

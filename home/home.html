@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - RamStore</title>
+    <link rel="stylesheet" href="css/home.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="nav container">
+            <a href="home.html" class="logo">RamStore</a>
+            
+            <div class="icons-container">
+                <a class="navigation active" href="home.html">Home</a>
+                <a class="navigation" href="galeri.html">Galeri</a>
+                <a class="navigation" href="produk.html">Produk</a>
+                <a class="navigation" href="testimoni.html">Testimoni</a>
+                <a class="navigation" href="tentang.html">Tentang</a>
+            </div>
+            
+            <div class="header-actions">
+                <a href="login.html" class="btnLogin-link">
+                    <button class="btnLogin-popup">Login</button>
+                </a>
+                <i class='bx bx-menu' id="menu-icon"></i>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        
+        <section class="hero-slider-section">
+            <div class="slider">
+                <div class="slides">
+                    <input type="radio" name="radio-btn" id="radio1" checked>
+                    <input type="radio" name="radio-btn" id="radio2">
+                    <input type="radio" name="radio-btn" id="radio3">
+                    <input type="radio" name="radio-btn" id="radio4">
+
+                    <div class="slide first">
+                        <img src="img/gambar5.jpeg" alt="Slide 1">
+                    </div>
+                    <div class="slide">
+                        <img src="img/gambar2.jpeg" alt="Slide 2">
+                    </div>
+                    <div class="slide">
+                        <img src="img/gambar7.jpeg" alt="Slide 3">
+                    </div>
+                    <div class="slide">
+                        <img src="img/tnfwomenRemovebg.png" alt="Slide 4">
+                    </div>
+
+                    <div class="navigation-auto">
+                        <div class="auto-btn1"></div>
+                        <div class="auto-btn2"></div>
+                        <div class="auto-btn3"></div>
+                        <div class="auto-btn4"></div>
+                    </div>
+                </div>
+                <div class="navigation-manual">
+                    <label for="radio1" class="manual-btn"></label>
+                    <label for="radio2" class="manual-btn"></label>
+                    <label for="radio3" class="manual-btn"></label>
+                    <label for="radio4" class="manual-btn"></label>
+                </div>
+            </div>
+        </section>
+
+        <section class="features container">
+            <div class="feature-box">
+                <i class='bx bxs-truck'></i>
+                <h3>Gratis Ongkir</h3>
+                <p>Pengiriman aman dan gratis ke seluruh Indonesia.</p>
+            </div>
+            <div class="feature-box">
+                <i class='bx bx-shield-quarter'></i>
+                <h3>Jaminan Original</h3>
+                <p>Semua produk dijamin 100% asli dan berkualitas.</p>
+            </div>
+            <div class="feature-box">
+                <i class='bx bx-support'></i>
+                <h3>Layanan 24/7</h3>
+                <p>Customer service kami siap membantu Anda kapan saja.</p>
+            </div>
+        </section>
+
+        <section class="categories container">
+            <h2 class="section-title">Kategori Populer</h2>
+            <div class="categories-grid">
+                <a href="produk.html" class="category-card">
+                    <i class='bx bx-run'></i>
+                    <span>Sepatu</span>
+                </a>
+                <a href="produk.html" class="category-card">
+                    <i class='bx bx-closet'></i>
+                    <span>Pakaian</span>
+                </a>
+                <a href="produk.html" class="category-card">
+                    <i class='bx bx-briefcase'></i>
+                    <span>Tas</span>
+                </a>
+                <a href="produk.html" class="category-card">
+                    <i class='bx bxs-watch'></i>
+                    <span>Aksesoris</span>
+                </a>
+            </div>
+        </section>
+
+        <section class="promo-banner container">
+            <div class="banner-content">
+                <span>NEW ARRIVALS</span>
+                <h2>Gaya Maksimal, Harga Minimal</h2>
+                <p>Dapatkan diskon hingga 30% untuk koleksi pakaian & sepatu pilihan minggu ini.</p>
+                <a href="produk.html" class="btn-shop-now">Belanja Sekarang</a>
+            </div>
+        </section>
+
+    </main>
+
+    <div class="wrapper">
+        <span class="icon-close"><i class='bx bx-x'></i></span>
+        
+        <div class="form-box login">
+            <h2>Login</h2>
+            <form action="login.php" method="post">
+                <div class="input-box">
+                    <span class="icon"><i class='bx bxs-envelope'></i></span>
+                    <input type="email" name="email" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><i class='bx bxs-lock-alt'></i></span>
+                    <input type="password" name="password" required>
+                    <label>Password</label>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox">Remember me</label>
+                    <a href="#">Forgot Password?</a>
+                </div>
+                <button type="submit" class="btn" name="submit">Login</button>
+                <div class="login-register">
+                    <p>Don't have an account? <a href="#" class="register-link">Register</a></p>
+                </div>
+            </form>
+        </div>
+
+        <div class="form-box register">
+            <h2>Registration</h2>
+            <form action="register.php" method="post">
+                <div class="input-box">
+                    <span class="icon"><i class='bx bxs-user'></i></span>
+                    <input type="text" name="username" required>
+                    <label>Username</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><i class='bx bxs-envelope'></i></span>
+                    <input type="email" name="email" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><i class='bx bxs-lock-alt'></i></span>
+                    <input type="password" name="password" required>
+                    <label>Password</label>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox" required>I agree to the terms & conditions</label>
+                </div>
+                <button type="submit" class="btn" name="submit">Registration</button>
+                <div class="login-register">
+                    <p>Already have an account? <a href="#" class="login-link">Login</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content container">
+            <div class="footer-brand">
+                <h3>RamStore</h3>
+                <p>Destinasi fashion dan apparel retail terbaik untuk menunjang penampilan harian Anda.</p>
+                
+            </div>
+            <div class="footer-links">
+                <h4>Navigasi</h4>
+                <a href="home.html">Home</a>
+                <a href="tentang.html">Tentang Kami</a>
+                <a href="produk.html">Katalog Produk</a>
+                <a href="testimoni.html">Testimoni</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 RamStore. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script src="js/home.js"></script>
+    <script type="text/javascript">
+        // Jalankan slide otomatis
+        var counter = 1;
+        setInterval(function(){
+            document.getElementById('radio' + counter).checked = true;
+            counter++;
+            if(counter > 4){
+                counter = 1;
+            }
+        }, 5000);
+
+        // Handler klik menu hamburger di handphone
+        const menuIcon = document.querySelector('#menu-icon');
+        const iconsContainer = document.querySelector('.icons-container');
+
+        menuIcon.addEventListener('click', () => {
+            menuIcon.classList.toggle('bx-x');
+            iconsContainer.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
