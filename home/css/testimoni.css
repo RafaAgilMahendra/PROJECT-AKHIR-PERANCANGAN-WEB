@@ -1,0 +1,455 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+:root {
+    --main-color: #fd4646;
+    --text-color: #171427;
+    --bg-color: #f2f2f2;
+}
+
+body {
+    min-height: 100vh;
+    background: #D3D3D3;
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    padding-top: 95px; 
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1068px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 15px;
+}
+
+/* navigasi header */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #D3D3D3;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+}
+
+.logo {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #171427;
+}
+.icons-container {
+    display: flex;
+    align-items: center;
+    gap: 30px; 
+}
+
+.navigation {
+    display: block;
+        width: 100%;
+        text-align: center;
+        padding: 16px 0; 
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+        font-size: 1rem;
+        font-weight: 600;
+        color: #171427;
+}
+
+.navigation:hover, .navigation.active {
+    color: #fd4646;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.btnLogin-popup {
+    padding: 8px 24px;
+    background: #171427;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btnLogin-popup:hover {
+    background: #fd4646;
+    transform: scale(1.03);
+}
+
+#menu-icon {
+    font-size: 2rem;
+    color: #171427;
+    cursor: pointer;
+    display: none;
+}
+
+/* icon hamburger */
+#menu-icon {
+    font-size: 1.8rem;
+    color: var(--text-color);
+    cursor: pointer;
+    display: none;
+}
+
+.hero {
+    text-align: center;
+    padding: 30px 15px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #162938;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    color: #555555;
+}
+
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    padding: 0 15px;
+}
+
+.filter-btn {
+    background: #ffffff;
+    color: #162938;
+    border: 2px solid #162938;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: #162938;
+    color: #ffffff;
+}
+
+.testimonials-section {
+    padding: 0 15px;
+    margin-bottom: 50px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #162938;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.user-info h3 {
+    font-size: 1.1rem;
+    color: #162938;
+    font-weight: 600;
+}
+
+.tag {
+    display: inline-block;
+    background: #f0f0f0;
+    color: #666666;
+    padding: 2px 10px;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.stars {
+    color: #ffc107;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.comment {
+    font-size: 0.95rem;
+    color: #444444;
+    line-height: 1.6;
+    font-style: italic;
+}
+
+.form-section {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 16px;
+    margin: 60px auto;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.form-section h2 {
+    font-size: 1.6rem;
+    color: #162938;
+    margin-bottom: 25px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.field label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #162938;
+}
+
+.field input,
+.field select,
+.field textarea {
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    outline: none;
+    background: #fafafa;
+    transition: border-color 0.3s;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+    border-color: #162938;
+}
+
+.field textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+.actions {
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    background: #162938;
+    color: #ffffff;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: var(--main-color);
+}
+
+.small-note {
+    font-size: 0.85rem;
+    color: #666666;
+}
+
+/* sidebar keranjang */
+.cart {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 360px;
+    min-height: 100vh;
+    padding: 20px;
+    background: var(--bg-color);
+    box-shadow: -2px 0 4px hsl(0 4% 15% / 10%);
+    transition: 0.3s ease;
+    z-index: 101;
+}
+
+.cart.active {
+    right: 0;
+}
+
+.cart-title {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 2rem;
+}
+
+#close-cart {
+    position: absolute;
+    top: 1rem;
+    right: 0.8rem;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    background: rgba(0,0,0,0.05);
+    font-size: 0.9rem;
+    color: #555555;
+    font-weight: 500;
+    margin-top: auto;
+}
+
+/* responsive hp */
+@media (max-width: 768px) {
+    #menu-icon {
+        display: block; 
+    }
+
+    .icons-container {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #D3D3D3;
+        flex-direction: column;
+        gap: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.35s ease-in-out;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .icons-container.active {
+        max-height: 400px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo { font-size: 1.5rem; }
+    .nav-right-icons { gap: 0.8rem; }
+    .btn-login-nav { padding: 6px 16px; font-size: 0.85rem; border-radius: 6px; }
+    #menu-icon { font-size: 1.6rem; }
+    .cart { width: 100%; }
+}
+/* ikon hamburger tersembunyi di desktop */
+#menu-icon {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+/* Styling kontainer kanan agar Login dan Hamburger berjajar */
+.nav-right-side {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+
+#menu-icon {
+    font-size: 1.8rem;
+    cursor: pointer;
+    display: none; 
+}
+
+/* Responsif untuk HP */
+@media (max-width: 768px) {
+    #menu-icon {
+        display: block; 
+    }
+    .icons-container {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #D3D3D3;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        max-height: 0; 
+        overflow: hidden;
+        transition: max-height 0.4s ease-in-out; 
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        padding: 0;
+    }
+
+    .icons-container.active {
+        max-height: 500px;
+        display: flex; 
+    }
+}
